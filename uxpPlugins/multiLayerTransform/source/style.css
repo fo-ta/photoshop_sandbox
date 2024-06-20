@@ -1,0 +1,25 @@
+body {
+    padding: 0 16px;
+}
+
+sp-textfield[type="number"] {
+  width: 120px;
+}
+
+sp-dropdown.dropCenter {
+  width: 140px;
+}
+
+sp-dropdown.dropUnit {
+  width: 80px;
+}
+
+sp-slider sp-label {
+  font-size: var(--uxp-host-font-size-larger);
+  color: var(--uxp-host-text-color-secondary);
+}
+
+footer {
+  margin-top: 16px;
+  justify-content: space-between;
+}

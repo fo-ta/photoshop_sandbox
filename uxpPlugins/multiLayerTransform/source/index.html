@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <sp-heading id="move_head">Move</sp-heading>
+  <sp-body id="move_body">
+    <sp-action-button id="btnMoveLeft" class="moveDirection">←</sp-action-button>
+    <sp-action-button id="btnMoveUp" class="moveDirection">↑</sp-action-button>
+    <sp-textfield id="moveValue" type="number" value="10">
+      <label slot="label">Move Value</label>
+    </sp-textfield>
+    <sp-action-button id="btnMoveDown" class="moveDirection">↓</sp-action-button>
+    <sp-action-button id="btnMoveRight" class="moveDirection">→</sp-action-button>
+  </sp-body>
+
+  <sp-divider size="medium"></sp-divider>
+
+  <sp-heading id="rotate_head">Rotate</sp-heading>
+  <sp-body id="rotate_body">
+    <sp-slider id="rotateValue" show-value="true" value-label="°" min="-360" max="360" value="90">
+      <sp-label slot="label">Roate Value (Degree)</sp-label>
+    </sp-slider>
+    <sp-action-button class="rotateAngleSwitch">0</sp-action-button>
+    <sp-action-button class="rotateAngleSwitch">90</sp-action-button>
+    <sp-action-button class="rotateAngleSwitch">180</sp-action-button>
+    <sp-action-button class="rotateAngleSwitch">360</sp-action-button>
+    <sp-action-button id="rotateAngleToggle">⇄</sp-action-button>
+    <br />
+    <sp-dropdown id="rotateCenter" class="dropCenter" placeholder="Make a selection...">
+      <label slot="label">Rotate Center</label>
+      <sp-menu slot="options">
+        <sp-menu-item value="QCSCorner0">Left-Top</sp-menu-item>
+        <sp-menu-item value="QCSSide0">Top</sp-menu-item>
+        <sp-menu-item value="QCSCorner1">Right-Top</sp-menu-item>
+        <sp-menu-item value="QCSSide3">Left</sp-menu-item>
+        <sp-menu-item value="QCSAverage" selected>Center</sp-menu-item>
+        <sp-menu-item value="QCSSide1">Right</sp-menu-item>
+        <sp-menu-item value="QCSCorner3">Left-Bottom</sp-menu-item>
+        <sp-menu-item value="QCSSide2">Bottom</sp-menu-item>
+        <sp-menu-item value="QCSCorner2">Right-Bottom</sp-menu-item>
+      </sp-menu>
+    </sp-dropdown>
+    <sp-action-button id="btnRotateLeft">↺</sp-action-button>
+    <sp-action-button id="btnRotateRight">↻</sp-action-button>
+  </sp-body>
+
+  <sp-divider size="medium"></sp-divider>
+
+  <sp-heading id="scale_head">Scale</sp-heading>
+  <sp-body id="scale_body">
+    <sp-textfield id="scaleValueWidth" type="number" value="50">
+      <label slot="label">Scale Width</label>
+    </sp-textfield>
+    <sp-textfield id="scaleValueHeight" type="number" value="50">
+      <label slot="label">Scale Height</label>
+    </sp-textfield>
+    <sp-dropdown id="dropScaleUnit" class="dropUnit" placeholder="Make a selection...">
+      <label slot="label">Scale Unit</label>
+      <sp-menu slot="options">
+        <sp-menu-item value="pixelUnit">pixel</sp-menu-item>
+        <sp-menu-item value="percentUnit" selected>%</sp-menu-item>
+      </sp-menu>
+    </sp-dropdown>
+    <br />
+    <sp-dropdown id="dropScaleCenter" class="dropCenter" placeholder="Make a selection...">
+      <label slot="label">Scale Center</label>
+      <sp-menu slot="options">
+        <sp-menu-item value="QCSCorner0">Left-Top</sp-menu-item>
+        <sp-menu-item value="QCSSide0">Top</sp-menu-item>
+        <sp-menu-item value="QCSCorner1">Right-Top</sp-menu-item>
+        <sp-menu-item value="QCSSide3">Left</sp-menu-item>
+        <sp-menu-item value="QCSAverage" selected>Center</sp-menu-item>
+        <sp-menu-item value="QCSSide1">Right</sp-menu-item>
+        <sp-menu-item value="QCSCorner3">Left-Bottom</sp-menu-item>
+        <sp-menu-item value="QCSSide2">Bottom</sp-menu-item>
+        <sp-menu-item value="QCSCorner2">Right-Bottom</sp-menu-item>
+      </sp-menu>
+    </sp-dropdown>
+    <sp-action-button value="valueTest" id="btnScaleApply">Apply</sp-action-button>
+  </sp-body>
+
+  <sp-divider size="medium"></sp-divider>
+
+  <footer>
+    <sp-checkbox id="isIncludeHiddenLayers">Include hidden layers</sp-checkbox>
+  </footer>
+</body>
+</html>

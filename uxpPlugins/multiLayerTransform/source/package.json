@@ -1,0 +1,7 @@
+{
+  "name": "multi-layer-transform",
+  "version": "1.0.0",
+  "description": "Photoshop plugin to transform multiple layer(mask)s.",
+  "author": "ota-f",
+  "license": "Apache-2.0"
+}
