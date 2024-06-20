@@ -543,7 +543,7 @@ document.querySelectorAll("sp-action-button.moveDirection").forEach(btn => {
 
 // Rotate
 document.querySelectorAll("#btnRotateLeft, #btnRotateRight").forEach(btn => {
-  btn.addEventListener("click", evt => {
+  btn.addEventListener("click", () => {
     // UI から回転角度と中心点を取得
     const angle = document.getElementById("rotateValue").value * (btn.id == "btnRotateLeft" ? -1 : 1);
     const center = document.getElementById("rotateCenter").value;
