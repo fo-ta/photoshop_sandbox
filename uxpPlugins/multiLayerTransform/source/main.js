@@ -87,7 +87,6 @@ class MultiLayerTransform {
    * @param {number} distanceV
    */
   move (distanceH, distanceV) {
-    // const isExistSelection = await this.isExistSelection();
     const command = {
       _obj: "cut",
       "to": {
