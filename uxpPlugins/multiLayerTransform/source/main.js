@@ -2,7 +2,7 @@ const { action, app, constants, core } = require("photoshop");
 
 /** transform multiple layer(mask)s. */
 class MultiLayerTransform {
-  static _TARGET_SELECTION = [{ _property: "selection", _ref: "channel" }];
+  static #TARGET_SELECTION = [{ _property: "selection", _ref: "channel" }];
   static #TARGET_LAYER = [{ _enum: "ordinal", _ref: "layer", _value: "targetEnum" }];
   #_isSelectionExists = undefined;
 
@@ -94,7 +94,7 @@ class MultiLayerTransform {
         "horizontal": this.#generateValueCommand(distanceH),
         "vertical": this.#generateValueCommand(distanceV)
       },
-      _target: MultiLayerTransform._TARGET_SELECTION
+      _target: MultiLayerTransform.#TARGET_SELECTION
     };
 
     this.#execute(
@@ -136,7 +136,7 @@ class MultiLayerTransform {
       angle, centerState, MultiLayerTransform.#TARGET_LAYER);
     // 選択範囲リストア後に選択範囲を変形と同等に回転するコマンドを生成
     const afterRestoreSelectionCommand = this.#generateRotateCommand(
-      angle, centerState, MultiLayerTransform._TARGET_SELECTION);
+      angle, centerState, MultiLayerTransform.#TARGET_SELECTION);
     // 実行
     this.#execute(
       command,
@@ -181,7 +181,7 @@ class MultiLayerTransform {
     // 選択範囲リストア後に選択範囲を変形と同等にスケールするコマンドを生成
     const afterRestoreSelectionCommand = this.#generateScaleCommand(
       valueWidth, valueHeight, unit, centerState,
-      MultiLayerTransform._TARGET_SELECTION);
+      MultiLayerTransform.#TARGET_SELECTION);
     // 実行
     this.#execute(
       command,
